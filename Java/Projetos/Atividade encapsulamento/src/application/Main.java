@@ -1,5 +1,5 @@
 package application;
-
+// ola mundo
 import java.util.Scanner;
 import entities.Class;
 public class Main {
