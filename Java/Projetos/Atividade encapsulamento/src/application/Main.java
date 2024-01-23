@@ -20,7 +20,7 @@ public class Main {
 
 
         if (temDinheiro == 'S' || temDinheiro == 's' ){
-            System.out.println("Digite o valor de deposito");
+            System.out.println("Digite o valor de deposito ");
             double depoistoConta= sc.nextDouble();
             banco = new Class(numConta,nomeConta,depoistoConta);
 
