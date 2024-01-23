@@ -1,5 +1,5 @@
 package application;
-// ola mundo
+
 import java.util.Scanner;
 import entities.Class;
 public class Main {
@@ -9,10 +9,10 @@ public class Main {
 
         Class banco;
 
-        System.out.println("Digite o numero da conta");
+        System.out.println("Digite o numero da conta: ");
         int numConta = sc.nextInt();
         sc.nextLine();
-        System.out.println("Digite o nome da conta");
+        System.out.println("Digite o nome da conta: ");
         String nomeConta = sc.nextLine();
 
         System.out.println("Tem Dinheiro \"S\"/\"N\"");
