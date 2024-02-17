@@ -1,5 +1,7 @@
 package Application;
 
+import entities.Account;
+import entities.AccountClient;
 import entities.AccountFuncionario;
 import entities.Livros;
 import util.LimpaTela;
@@ -100,13 +102,13 @@ public class Main {
 
                         System.out.print("Digite o Nome do livro: ");
                         sc.nextLine();
-                        String nameLivro = sc.nextLine().toLowerCase();
-                        Livros encontraLivroName = list.stream().filter(x->x.getName().toLowerCase().equals(nameLivro)).findFirst().orElse(null);
+                        String nameLivro = sc.nextLine();
+                        Livros encontraLivroName = list.stream().filter(x -> x.getName().equals(nameLivro)).findFirst().orElse(null);
 
                         if (encontraLivroName != null) {
                             System.out.println("Livro Encotrado");
                             System.out.print(encontraLivroName);
-                        }else {
+                        } else {
                             System.out.println("Livro não encontrado");
                         }
                         System.out.println("Deseja volta pro menu inicial [ s / n ]");
@@ -133,7 +135,50 @@ public class Main {
 
         } while (resposta == 's');
 
-        System.out.println("Desenvolvido por Willian Oliveira");
+        System.out.println(accountFuncionario.getName().toUpperCase() + " Blilbioteca Atendimento: ");
+        List<AccountClient> accountClients = new ArrayList<>();
+
+        /*System.out.println("Cadastro :");
+        System.out.print("Nome:");
+        sc.nextLine();
+        String name = sc.nextLine();
+        System.out.print("Idade:");
+        int idade = sc.nextInt();
+        System.out.print("Endereço:");
+        sc.nextLine();
+        String endereco = sc.nextLine();*/
+        accountClients.add(new AccountClient("Willian", 27, "Bruno Mordhost"));
+
+        System.out.println("Digite 1 para alugar um livro");
+        System.out.println("Digite 2 para Ver os livros");
+        System.out.println("Digite 3 para ver sua divida");
+        System.out.println("Digite 3 para Devolver o Livro");
+        System.out.print("Digite um numero: ");
+        int n = sc.nextInt();
+        switch (n){
+            case 1:
+                mostraLivro(list);
+                System.out.println("");
+
+                break;
+            case 2:
+
+                break;
+            case 3:
+
+                break;
+            default:
+                System.out.println("Error 21: Numero digitado errrado");
+                break;
+        }
+
+        //Selecionar o Cliente desejado
+        AccountClient accountClientAtual = new AccountClient();
+        for (AccountClient accountClient : accountClients) {
+            accountClientAtual = accountClient;
+        }
+
+
         sc.close();
     }
 
